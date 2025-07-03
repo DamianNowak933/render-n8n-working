@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: n8n-agent
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: false
+    healthCheckPath: /
+    envVars:
+      - key: N8N_PORT
+        value: 5678
+      - key: WEBHOOK_TUNNEL_URL
+        value: https://n8n-agent-wmqy.onrender.com
